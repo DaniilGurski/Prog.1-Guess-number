@@ -57,7 +57,7 @@ class GuessTheNumber:
         os.system("cls")
         
         starting_time = game_results["game_start_time"]
-        finishing_time = int(time.time() - starting_time) 
+        finishing_time = int(time.perf_counter() - starting_time) 
         finishing_time_display = self.create_time_display(finishing_time)
 
         correct_number = game_results["correct_number"]
@@ -82,7 +82,7 @@ You saved {guesses_left} guesses.
     
 
     def main(self):
-        game_start_time = time.time()
+        game_start_time = time.perf_counter()
         game_win = False
 
         correct_number = self.generate_random_number()
